@@ -90,3 +90,33 @@ nginx -s reload # Relaod Nginx without stopping the server
 
 ps -C nginx -f # Check the number of worker processes
 ```
+
+### 03 - Static Files | Multiple Domain | Local DNS configuration
+
+**Note:** This does not setup local DNS like in the tutorial.
+
+- Change to `03. Static Files and Multiple domains` directory
+
+- Build with docker compose
+
+```sh
+make build
+```
+
+- Update your `/etc/hosts` file
+
+```sh
+nano /etc/hosts
+
+# Add the following
+127.0.0.1        ns.main.com
+127.0.0.1        ns.secondary.com
+```
+
+- Run the nginx container
+
+```sh
+make up
+```
+
+- Now go to your browser and check for `ns.main.com` and `ns.secondary.com`
