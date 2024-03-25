@@ -139,9 +139,22 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+- Create a environment variables file
+
+```sh
+mkdir .env
+touch .env/dev.env
+
+# Add the following to the dev.env file
+SECRET_KEY=django-insecure-(itew5zx*xy-uv6ls!+lly15%-@1q$1*5z(!xfcp#_s5@ry%(#
+ALLOWED_HOSTS=localhost 127.0.0.1 main.com www.main.com
+DEBUG=1
+```
+
 - Run migrations and collectstatic
 
 ```sh
+source .env/dev.env
 python manage.py migrate
 python manage.py collectstatic
 ```
