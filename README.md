@@ -120,3 +120,42 @@ make up
 ```
 
 - Now go to your browser and check for `ns.main.com` and `ns.secondary.com`
+
+### 04 - Nginx Reverse Proxy
+
+- Change to `04. Nginx Reverse Proxy` directory
+
+- Change to `django` directory and create a virtual environment
+
+```sh
+cd django
+python -m venv venv
+source venv/bin/activate
+```
+
+- Install needed dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+- Run migrations and collectstatic
+
+```sh
+python manage.py migrate
+python manage.py collectstatic
+```
+
+- Change back to `04. Nginx Reverse Proxy` directory
+
+- Build with docker compose
+
+```sh
+make build
+```
+
+- Start the server
+
+```sh
+make up
+```
